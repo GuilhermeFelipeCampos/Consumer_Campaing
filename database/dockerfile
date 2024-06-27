@@ -4,8 +4,11 @@ ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=admin
 ENV POSTGRES_DB=consumer-campaing-db
 
-ARG DB_SQL=postgres/database/squemas/squema_db.sql
-ARG TABLE_SQL=postgres/database/squemas/owner.sql
+ARG DB_SQL=../squemas/squema_db.sql
+ARG TABLE_SQL=../squemas/tables/owner.sql
+ARG TABLE_SQL=../squemas/tables/slug.sql
+ARG TABLE_SQL=../squemas/tables/region.sql
+
 
 COPY $DB_SQL /docker-entrypoint-initdb.d/
 COPY $TABLE_SQL /docker-entrypoint-initdb.d/
