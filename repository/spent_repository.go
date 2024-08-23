@@ -33,7 +33,7 @@ func (pg SpentRepository) InsertSpent(ctx context.Context, spent model.Spent) er
 	return nil
 }
 
-func (pg SlugRepository) ListSpents(ctx context.Context) ([]model.Spent, error) {
+func (pg SpentRepository) ListSpents(ctx context.Context) ([]model.Spent, error) {
 
 	sql := `SELECT id, campaing_id,bucket, total_spent, total_clicks, total_impressions FROM spent`
 
